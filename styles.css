@@ -1,0 +1,96 @@
+body{
+  background-color: floralwhite;
+  display: grid;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.op-btn, .num-btn{
+  border-radius: 50%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  width: 4rem;
+}
+
+
+.add{
+  border-radius: 50px;
+  grid-row: 3/5;
+  grid-column: 4;
+  height: 8.65rem;
+}
+
+.equal{
+border-radius: 50px;
+grid-column: 3/5;
+width: 8.65rem;
+}
+
+.btn-box{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  width: 82.1%;
+  height: 60%;
+  padding-top: 1%;
+  align-items: space-around;
+  grid-gap: 10px;
+  position: absolute;
+  margin-top: 42%;
+}
+
+.grid-box{
+  background-color: powderblue;
+  display: grid;
+  height: 60vh;
+  width: 40vh;
+  border-radius: 20px;
+  margin-top: 15vh;
+  justify-items: center;
+  position: relative;
+}
+
+.calc-display{
+  background-color: aliceblue;
+  display: grid;
+  justify-content: end;
+  align-items: center;
+  height: 22%;
+  width: 90%;
+  border-radius: 20px;
+  margin-top: 5%;
+}
+
+.num-btn{
+  background-color: beige;
+  transition: 100ms;
+}
+
+.num-btn:hover{
+  background-color:blanchedalmond;
+  cursor: pointer;
+  scale: 1.05;
+}
+
+.op-btn{
+  background-color: cadetblue;
+  transition: 100ms;
+}
+
+.op-btn:hover{
+  background-color: darkcyan;
+  cursor: pointer;
+  scale: 1.05;
+}
+
+
+#disp-txt{
+  font-size: 3rem;
+  font-weight: bold;
+  margin-right: 20px;
+}
