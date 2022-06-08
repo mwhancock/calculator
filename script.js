@@ -1,5 +1,8 @@
 const display = document.getElementById('disp-txt');
 const buttons = document.querySelectorAll('button');
+const numButtons = Array.from(document.getElementsByClassName('num-btn'));
+const opButtons = Array.from(document.getElementsByClassName('op-btn'));
+const eql = document.getElementById('equal');
 
 function add(n1, n2){
   return n1 + n2;
@@ -37,27 +40,38 @@ function operate(operator, n1, n2){
 };
 
 
-let num1;
-let num2;
-let op;
 function calculate(operator, n1, n2){
   buttons.forEach(btn => {
     btn.addEventListener('click', (e) => {
-      if(e.target.innerText === '='){
-        display.innerText = operate(op, num1, num2);
-        console.log(operate(op, num1, num2))
-      }else if(e.target.className === 'op-btn'){
-        op = e.target.innerText;
-        display.innerText += ' ' + op;
-      }else if(!num1){
-        num1 = parseInt(e.target.innerText);
-        display.innerText = e.target.innerText;
-      }else if(num1 && !num2){
-        num2 = parseInt(e.target.innerText);
-        display.innerText += ' ' + e.target.innerText;
+      // display.innerText = operate(operator, n1, n2);
+    })
+  })
+}
+
+let num1;
+let num2;
+ function getNum1(){
+  numButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      let num;
+      display.innerText += e.target.innerText;
+      if(e !== numButtons){
+        num1 = display.innerText;
+        if(num1 && e !== eql){
+          display.innerText += display.innerText;
+        }
       }
     })
   })
 }
 
-calculate(op, num1, num2);
+function getOperator(){
+  opButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      let op = e.target.innerText;
+      display.innerText += op;
+
+    })
+  })
+}
+calculate(getOperator(), num1, num2;
